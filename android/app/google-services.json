@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "519430479086",
+    "firebase_url": "https://ird-myanmar.firebaseio.com",
+    "project_id": "ird-myanmar",
+    "storage_bucket": "ird-myanmar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519430479086:android:b18d5e8357b4fe96",
+        "android_client_info": {
+          "package_name": "com.ird_myanmar_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519430479086-5mnf9bsp8u9vqa4daq8fc39jq9j4au2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4XV6TjuHNJi3w6GvI7eMP2TwuF2Gg7Uk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519430479086-5mnf9bsp8u9vqa4daq8fc39jq9j4au2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
