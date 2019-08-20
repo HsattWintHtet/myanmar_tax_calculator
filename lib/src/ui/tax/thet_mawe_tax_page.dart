@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/thet_mawe_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/ui/utils/common_widget.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/thet_mawe_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/common_widget.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 /// အသက်မွေးဝမ်းကျောင်းပညာလုပ်ငန်းမှဝင်ငွေခွန် တွက်ချက်ခြင်း
 class ThetMaweTaxCalculationPage extends StatefulWidget {

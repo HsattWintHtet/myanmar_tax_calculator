@@ -1,9 +1,9 @@
 
 
-import 'package:ird_myanmar_app/src/bloc/black_income_tax/black_income_state.dart';
-import 'package:ird_myanmar_app/src/services/tax_calculator.dart';
-import 'package:ird_myanmar_app/src/ui/tax/black_income_tax_calculation_page.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/black_income_state.dart';
+import 'package:myanmar_tax_calculator/src/services/tax_calculator.dart';
+import 'package:myanmar_tax_calculator/src/ui/tax/black_income_tax_calculation_page.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 import 'package:test_api/test_api.dart';
 
 void main() {

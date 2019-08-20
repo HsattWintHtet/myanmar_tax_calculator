@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/thet_mawe_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/thet_mawe_tax/ThetMaweBizTaxService.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/thet_mawe_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/bloc/thet_mawe_tax/ThetMaweBizTaxService.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class ThetMaweBizTaxBloc extends Bloc<ThetMaweBizTaxEvent, ThetMaweBizTaxState> {
   @override

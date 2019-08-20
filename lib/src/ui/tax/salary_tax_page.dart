@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/black_income_tax/black_income_state.dart';
-import 'package:ird_myanmar_app/src/bloc/income_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
-import 'package:ird_myanmar_app/src/ui/utils/util_package.dart';
+import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/black_income_state.dart';
+import 'package:myanmar_tax_calculator/src/bloc/income_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/util_package.dart';
 
 /// လစာဝင်ငွေခွန်တွက်ချက်ခြင်း
 class IncomeTaxCalculationPage extends StatefulWidget {

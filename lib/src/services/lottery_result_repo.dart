@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:ird_myanmar_app/src/model/Lottery_result_param.dart';
-import 'package:ird_myanmar_app/src/services/SharedPreferencesHelper.dart';
+import 'package:myanmar_tax_calculator/src/model/Lottery_result_param.dart';
+import 'package:myanmar_tax_calculator/src/services/SharedPreferencesHelper.dart';
 
 import 'lottery_api_provider.dart';
 import '../model/lottery_result.dart';

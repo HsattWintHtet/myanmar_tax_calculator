@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/rental_service_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/rental_service_tax/rental_service.dart';
+import 'package:myanmar_tax_calculator/src/bloc/rental_service_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/bloc/rental_service_tax/rental_service.dart';
 
 class RentalServiceBloc extends Bloc<RentalServiceEvent, RentalServiceState> {
 

@@ -28,12 +28,12 @@ import 'dart:async';
 import 'package:connectivity/connectivity.dart';
 
 import 'package:flutter/material.dart';
-import 'package:ird_myanmar_app/src/model/Lottery_result_param.dart';
-import 'package:ird_myanmar_app/src/presenter/lottery_list_presenter.dart';
-import 'package:ird_myanmar_app/src/presenter/lottery_result_presenter.dart';
-import 'package:ird_myanmar_app/src/services/SharedPreferencesHelper.dart';
+import 'package:myanmar_tax_calculator/src/model/Lottery_result_param.dart';
+import 'package:myanmar_tax_calculator/src/presenter/lottery_list_presenter.dart';
+import 'package:myanmar_tax_calculator/src/presenter/lottery_result_presenter.dart';
+import 'package:myanmar_tax_calculator/src/services/SharedPreferencesHelper.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 
 /// reference

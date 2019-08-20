@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:ird_myanmar_app/src/model/lottery_result.dart';
-import 'package:ird_myanmar_app/src/model/Lottery_result_param.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/model/lottery_result.dart';
+import 'package:myanmar_tax_calculator/src/model/Lottery_result_param.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 
 class LotteryResultAPI {

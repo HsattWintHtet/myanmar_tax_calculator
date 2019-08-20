@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/individual_biz_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/individual_biz_tax/IndividualBizTaxService.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/individual_biz_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/bloc/individual_biz_tax/IndividualBizTaxService.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class IndividualBizTaxBloc extends Bloc<IndividualBizTaxEvent, IndividualBizTaxState> {
   @override

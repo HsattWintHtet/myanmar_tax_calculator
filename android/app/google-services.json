@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "519430479086",
-    "firebase_url": "https://ird-myanmar.firebaseio.com",
-    "project_id": "ird-myanmar",
-    "storage_bucket": "ird-myanmar.appspot.com"
+    "project_number": "444835412523",
+    "firebase_url": "https://mm-tax-calculator.firebaseio.com",
+    "project_id": "mm-tax-calculator",
+    "storage_bucket": "mm-tax-calculator.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:519430479086:android:b18d5e8357b4fe96",
+        "mobilesdk_app_id": "1:444835412523:android:e41f178172118a29",
         "android_client_info": {
-          "package_name": "com.ird_myanmar_app"
+          "package_name": "com.ksa.mmtax"
         }
       },
       "oauth_client": [
         {
-          "client_id": "519430479086-5mnf9bsp8u9vqa4daq8fc39jq9j4au2f.apps.googleusercontent.com",
+          "client_id": "444835412523-bvedgtji5j0nm1ut1atfk7ctps0t0bat.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA4XV6TjuHNJi3w6GvI7eMP2TwuF2Gg7Uk"
+          "current_key": "AIzaSyAb6cs7AgSewqP9kcFQZGrbmBkNZMFvxr0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "519430479086-5mnf9bsp8u9vqa4daq8fc39jq9j4au2f.apps.googleusercontent.com",
+              "client_id": "444835412523-bvedgtji5j0nm1ut1atfk7ctps0t0bat.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

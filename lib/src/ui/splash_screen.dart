@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:ird_myanmar_app/main.dart';
-import 'package:ird_myanmar_app/src/home_page.dart';
+import 'package:myanmar_tax_calculator/main.dart';
+import 'package:myanmar_tax_calculator/src/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
 

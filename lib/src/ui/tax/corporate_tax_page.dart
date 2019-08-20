@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ird_myanmar_app/src/bloc/corporate/bloc.dart';
-import 'package:ird_myanmar_app/src/ui/utils/util_package.dart';
+import 'package:myanmar_tax_calculator/src/bloc/corporate/bloc.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/util_package.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// စီးပွားရေးလုပ်ငန်းမှ ဝင်ငွေခွန်တွက်ချက်ခြင်း (Corporate)

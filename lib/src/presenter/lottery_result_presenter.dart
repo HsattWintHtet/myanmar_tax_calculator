@@ -1,8 +1,8 @@
 import 'package:event_bus/event_bus.dart';
-import 'package:ird_myanmar_app/src/model/Lottery_result_param.dart';
-import 'package:ird_myanmar_app/src/model/lottery_result.dart';
-import 'package:ird_myanmar_app/src/services/lottery_api_provider.dart';
-import 'package:ird_myanmar_app/src/services/lottery_result_repo.dart';
+import 'package:myanmar_tax_calculator/src/model/Lottery_result_param.dart';
+import 'package:myanmar_tax_calculator/src/model/lottery_result.dart';
+import 'package:myanmar_tax_calculator/src/services/lottery_api_provider.dart';
+import 'package:myanmar_tax_calculator/src/services/lottery_result_repo.dart';
 
 class LotterySearchEvent {
   final LotteryResultParam param;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ird_myanmar_app/src/ui/splash_screen.dart';
+import 'package:myanmar_tax_calculator/src/ui/splash_screen.dart';
 
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
