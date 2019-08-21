@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:myanmar_tax_calculator/main.dart';
 import 'package:myanmar_tax_calculator/src/home_page.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class SplashScreen extends StatefulWidget {
 
@@ -12,9 +14,17 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
+
+
   @override
   void initState() {
     super.initState();
+
+    setupFetchRemoteConfig().then((remoteConfig){
+      print('fetchData ${remoteConfig.getString('url')}');
+      // set the firebase remote config into URL.
+      ConstantUtils.BASE_URL = remoteConfig.getString('url');
+    });
 
     Timer(Duration(seconds: 3), () {
         Navigator.push(
@@ -23,6 +33,30 @@ class _SplashScreenState extends State<SplashScreen> {
         );
       }
     );
+  }
+
+  Future<RemoteConfig> setupFetchRemoteConfig() async {
+    final RemoteConfig remoteConfig = await RemoteConfig.instance;
+    await remoteConfig.setDefaults(<String, dynamic>{
+      'url': ConstantUtils.BASE_URL
+    });
+    return await fetchData(remoteConfig);
+  }
+
+  Future<RemoteConfig> fetchData(RemoteConfig remoteConfig) async {
+    try {
+      // Using default duration to force fetching from remote server.
+      await remoteConfig.fetch(expiration: const Duration(seconds: 0));
+      await remoteConfig.activateFetched();
+    } on FetchThrottledException catch (exception) {
+      // Fetch throttled.
+      print(exception);
+    } catch (exception) {
+      print(
+          'Unable to fetch remote config. Cached or default values will be '
+              'used');
+    }
+    return remoteConfig;
   }
 
   @override
