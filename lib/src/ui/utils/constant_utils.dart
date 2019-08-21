@@ -9,7 +9,7 @@ class ConstantUtils {
 
   static const int INPUT_FIELD_LENGTH = 25;
 
-//  static const BASE_URL = "https://ird-myanmar-app.herokuapp.com/result";
+  // this data will get from firebase remote config
   static String BASE_URL = "https://www.localhost.com";
 
   static final KEYS = {
