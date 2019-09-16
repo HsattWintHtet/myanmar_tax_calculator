@@ -3,6 +3,8 @@ import 'package:myanmar_tax_calculator/src/ui/splash_screen.dart';
 
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
+import 'package:firebase_remote_config/firebase_remote_config.dart';
+
 
 void main() {
   // Set `enableInDevMode` to true to see reports while in debug mode
@@ -17,6 +19,19 @@ void main() {
   };
   runApp(new MyMainApp());
 }
+
+
+Future<RemoteConfig> setupRemoteConfig() async {
+  final RemoteConfig remoteConfig = await RemoteConfig.instance;
+  // Enable developer mode to relax fetch throttling
+  remoteConfig.setConfigSettings(RemoteConfigSettings(debugMode: true));
+  remoteConfig.setDefaults(<String, dynamic>{
+    'welcome': 'default welcome',
+    'hello': 'default hello',
+  });
+  return remoteConfig;
+}
+
 
 class MyMainApp extends StatelessWidget {
 
