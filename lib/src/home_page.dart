@@ -15,6 +15,7 @@ import 'package:myanmar_tax_calculator/src/ui/tax/thet_mawe_tax_page.dart';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class DrawerItem {
   String title;
@@ -30,7 +31,7 @@ class HomePage extends StatefulWidget {
     new DrawerItem("စည်းကြပ်မှုမှလွတ်ကင်းနေသောဝင်ငွေခွန်", Icons.search,1),
     new DrawerItem("စီးပွားရေးလုပ်ငန်း (Corporate)", Icons.search,2),
     new DrawerItem("လစာဝင်ငွေခွန်တွက်ချက်ခြင်း", Icons.search,3),
-    new DrawerItem("အခြေပစ္စည်းမှမြတ်စွန်းငွေ", Icons.search,4),
+    new DrawerItem("အခြေခံပစ္စည်းမှမြတ်စွန်းငွေ", Icons.search,4),
     new DrawerItem("အသက်မွေး ပညာလုပ်ငန်းမှဝင်ငွေခွန်", Icons.search,5),
     new DrawerItem("စီးပွားရေးလုပ်ငန်းမှဝင်ငွေခွန်(Individual)", Icons.search,6),
     new DrawerItem("ပစ္စည်းဌားရမ်းခလုပ်ငန်းမှဝင်ငွေခွန်", Icons.search,7),
@@ -151,7 +152,7 @@ class HomePageState extends State<HomePage> with RouteAware {
                 onTap: () => _onSelectItem(3),
               ),
               ListTile(
-                title: new Text('အခြေပစ္စည်းမှမြတ်စွန်းငွေ', style: TextStyle(fontSize: 11),),
+                title: new Text('အခြေခံပစ္စည်းမှမြတ်စွန်းငွေ', style: TextStyle(fontSize: 11),),
                 selected: 4 == _selectedDrawerIndex,
                 onTap: () => _onSelectItem(4),
               ),
@@ -209,10 +210,10 @@ class HomePageState extends State<HomePage> with RouteAware {
                     children: <Widget>[
 
                       UserAccountsDrawerHeader(
-                        accountName: new Text('IRD Myanmar v0.4'),
-                        accountEmail: new Text('irdmyanmar@gmail.com'),
+                        accountName: new Text('${ConstantUtils.APP_NAME} v0.4'),
+                        accountEmail: Text(ConstantUtils.APP_DESCRIPTION,style: TextStyle(fontSize: 10),),
                         currentAccountPicture: new CircleAvatar(
-                          backgroundImage: AssetImage('images/ird_mm_logo.png'),
+                          backgroundImage: AssetImage('images/app_logo.png'),
                         ),
                       ),
                       new Expanded(

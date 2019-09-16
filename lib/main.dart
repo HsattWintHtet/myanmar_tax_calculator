@@ -41,7 +41,7 @@ class MyMainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Pyidaungsu',primarySwatch: blue),
-      title: 'IRD Myanmar',
+      title: 'တွက်ချက် Myanmar',
       home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );

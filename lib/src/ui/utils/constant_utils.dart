@@ -12,6 +12,9 @@ class ConstantUtils {
   // this data will get from firebase remote config
   static String BASE_URL = "https://www.localhost.com";
 
+  static const String APP_NAME = 'တွက်ချက်';
+  static const String APP_DESCRIPTION = 'a Tax Calculator based on Internal Revenue website.';
+
   static final KEYS = {
     Key('1'), Key('2'), Key('3'),Key('4'),
     Key('5'),Key('6'),Key('7'),Key('8'),Key('9')

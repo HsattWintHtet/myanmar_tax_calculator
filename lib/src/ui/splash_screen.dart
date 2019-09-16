@@ -24,15 +24,20 @@ class _SplashScreenState extends State<SplashScreen> {
       print('fetchData ${remoteConfig.getString('url')}');
       // set the firebase remote config into URL.
       ConstantUtils.BASE_URL = remoteConfig.getString('url');
+    }).whenComplete((){
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
     });
 
-    Timer(Duration(seconds: 3), () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => HomePage()),
-        );
-      }
-    );
+//    Timer(Duration(seconds: 3), () {
+//        Navigator.push(
+//          context,
+//          MaterialPageRoute(builder: (context) => HomePage()),
+//        );
+//      }
+//    );
   }
 
   Future<RemoteConfig> setupFetchRemoteConfig() async {
@@ -78,19 +83,21 @@ class _SplashScreenState extends State<SplashScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         CircleAvatar(
-                          backgroundImage: AssetImage("images/ird_mm_logo.png"),
+                          backgroundImage: AssetImage("images/app_logo.png"),
                           radius: 50.0,
                         ),
                         Padding(
                           padding: EdgeInsets.only(top: 10.0),
                         ),
                         Text(
-                          'Internal Revenue Department',
+                          ConstantUtils.APP_NAME,
                           style: TextStyle(
                               color: MyMainApp.blue.shade900,
                               fontWeight: FontWeight.bold,
                               fontSize: 24.0),
-                        )
+                        ),
+                        Text(ConstantUtils.APP_DESCRIPTION)
+
                       ],
                     ),
                   ),
