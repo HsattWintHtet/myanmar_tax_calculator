@@ -27,7 +27,7 @@ class DrawerItem {
 class HomePage extends StatefulWidget {
 
   final drawerItems = [
-    new DrawerItem("Lottery Result", Icons.search,0),
+//    new DrawerItem("Lottery Result", Icons.search,0), TODO add later
     new DrawerItem("စည်းကြပ်မှုမှလွတ်ကင်းနေသောဝင်ငွေခွန်", Icons.search,1),
     new DrawerItem("စီးပွားရေးလုပ်ငန်း (Corporate)", Icons.search,2),
     new DrawerItem("လစာဝင်ငွေခွန်တွက်ချက်ခြင်း", Icons.search,3),
@@ -35,8 +35,8 @@ class HomePage extends StatefulWidget {
     new DrawerItem("အသက်မွေး ပညာလုပ်ငန်းမှဝင်ငွေခွန်", Icons.search,5),
     new DrawerItem("စီးပွားရေးလုပ်ငန်းမှဝင်ငွေခွန်(Individual)", Icons.search,6),
     new DrawerItem("ပစ္စည်းဌားရမ်းခလုပ်ငန်းမှဝင်ငွေခွန်", Icons.search,7),
-    new DrawerItem("Lottery Number Register", Icons.save,8),
-    new DrawerItem("Lottery Number List", Icons.list,9),
+//    new DrawerItem("Lottery Number Register", Icons.save,8), TODO add later
+//    new DrawerItem("Lottery Number List", Icons.list,9), TODO add later
     new DrawerItem("About Us", Icons.info,10),
   ];
 
@@ -60,27 +60,27 @@ class HomePageState extends State<HomePage> with RouteAware {
     String pageName = '';
 
     switch (pos) {
+//      case 0:
+//        return new LotterySearchFragment(); TODO add later
       case 0:
-        return new LotterySearchFragment();
-      case 1:
         return new TaxCalculationPage1();
-      case 2:
+      case 1:
         return new CorporateTaxCalculationPage();
-      case 3:
+      case 2:
         return new IncomeTaxCalculationPage();
-      case 4:
+      case 3:
         return new ProfitTaxCalculationPage();
-      case 5:
+      case 4:
         return new ThetMaweTaxCalculationPage();
-      case 6:
+      case 5:
         return new IndividualTaxCalculationPage();
-      case 7:
+      case 6:
         return new RentalServiceTaxCalculationPage();
-      case 8:
-        return new LotteryNoRegFragment();
-      case 9:
-        return new LotteryRegNoList();
-      case 10:
+//      case 8:
+//        return new LotteryNoRegFragment(); TODO add later
+//      case 9:
+//        return new LotteryRegNoList(); TODO add later
+      case 7:
         return new AboutUsFragment();
 
       default:
@@ -100,17 +100,17 @@ class HomePageState extends State<HomePage> with RouteAware {
 
 
   var pageNames = {
-    0:'LotterySearchFragment',
-    1:'TaxCalculationPage1',
-    2:'CorporateTaxCalculationPage',
-    3:'IncomeTaxCalculationPage',
-    4:'ProfitTaxCalculationPage',
-    5:'ThetMaweTaxCalculationPage',
-    6:'IndividualTaxCalculationPage',
-    7:'RentalServiceTaxCalculationPage',
-    8:'LotteryNoRegFragment',
-    9:'LotteryRegNoList',
-    10:'AboutUsFragment',
+//    0:'LotterySearchFragment', TODO add later
+    0:'TaxCalculationPage1',
+    1:'CorporateTaxCalculationPage',
+    2:'IncomeTaxCalculationPage',
+    3:'ProfitTaxCalculationPage',
+    4:'ThetMaweTaxCalculationPage',
+    5:'IndividualTaxCalculationPage',
+    6:'RentalServiceTaxCalculationPage',
+//    8:'LotteryNoRegFragment', TODO add later
+//    9:'LotteryRegNoList', TODO add later
+    7:'AboutUsFragment',
   };
 
   _onSelectItem(int index) {
@@ -124,77 +124,65 @@ class HomePageState extends State<HomePage> with RouteAware {
   Widget build(BuildContext context) {
     List<Widget> drawerOptions = [];
 
-    drawerOptions.add(new ListTile(
-      leading: new Icon(Icons.search),
-      title: new Text('Lottery Result'),
-      selected: _selectedDrawerIndex == 0,
-      onTap: () => _onSelectItem(0),
-    ));
+    //TODO add later
+//    drawerOptions.add(new ListTile(
+//      leading: new Icon(Icons.search),
+//      title: new Text('Lottery Result'),
+//      selected: _selectedDrawerIndex == 0,
+//      onTap: () => _onSelectItem(0),
+//    ));
 
-    drawerOptions.add(
-        new ExpansionTile(
-          leading: new Icon(Icons.monetization_on),
-          title: Text("Tax Calculator"),
-            children: <Widget>[
-              ListTile(
-              title: new Text('စည်းကြပ်မှုမှလွတ်ကင်းနေသောဝင်ငွေခွန်', style: TextStyle(fontSize: 11),),
-              selected: 1 == _selectedDrawerIndex,
-              onTap: () => _onSelectItem(1),
-              ),
-              ListTile(
-                title: new Text('စီးပွားရေးလုပ်ငန်း (Corporate)', style: TextStyle(fontSize: 11),),
-                selected: 2 == _selectedDrawerIndex,
-                onTap: () => _onSelectItem(2),
-              ),
-              ListTile(
-                title: new Text('လစာဝင်ငွေခွန်တွက်ချက်ခြင်း', style: TextStyle(fontSize: 11),),
-                selected: 3 == _selectedDrawerIndex,
-                onTap: () => _onSelectItem(3),
-              ),
-              ListTile(
-                title: new Text('အခြေခံပစ္စည်းမှမြတ်စွန်းငွေ', style: TextStyle(fontSize: 11),),
-                selected: 4 == _selectedDrawerIndex,
-                onTap: () => _onSelectItem(4),
-              ),
-              ListTile(
 
-                title: new Text('အသက်မွေး ပညာလုပ်ငန်းမှဝင်ငွေခွန်', style: TextStyle(fontSize: 11),),
-                selected: 5 == _selectedDrawerIndex,
-                onTap: () => _onSelectItem(5),
-              ),
-              ListTile(
-                title: new Text('စီးပွားရေးလုပ်ငန်းမှဝင်ငွေခွန်(Individual)', style: TextStyle(fontSize: 11),),
-                selected: 6 == _selectedDrawerIndex,
-                onTap: () => _onSelectItem(6),
-              ),
-              ListTile(
-                title: new Text('ပစ္စည်းဌားရမ်းခလုပ်ငန်းမှဝင်ငွေခွန်', style: TextStyle(fontSize: 11),),
-                selected: 7 == _selectedDrawerIndex,
-                onTap: () => _onSelectItem(7),
-              )
-            ],
-        )
-    );
-
-    drawerOptions.add(new ListTile(
-      leading: new Icon(Icons.save),
-      title: new Text('Lottery Number Register'),
-      selected: _selectedDrawerIndex == 8,
-      onTap: () => _onSelectItem(8),
-    ));
-
-    drawerOptions.add(new ListTile(
-      leading: new Icon(Icons.list),
-      title: new Text('Lottery Number List'),
-      selected: _selectedDrawerIndex == 9,
-      onTap: () => _onSelectItem(9),
-    ));
+    drawerOptions.addAll(<Widget>[
+      ListTile(
+        leading: Icon(Icons.monetization_on),
+        title: new Text('စည်းကြပ်မှုမှလွတ်ကင်းနေသောဝင်ငွေခွန်', style: TextStyle(fontSize: 10),),
+        selected: 0 == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(0),
+      ),
+      ListTile(
+        leading: Icon(Icons.monetization_on),
+        title: new Text('စီးပွားရေးလုပ်ငန်း (Corporate)', style: TextStyle(fontSize: 10),),
+        selected: 1 == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(1),
+      ),
+      ListTile(
+        leading: Icon(Icons.monetization_on),
+        title: new Text('လစာဝင်ငွေခွန်တွက်ချက်ခြင်း', style: TextStyle(fontSize: 11),),
+        selected: 2 == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(2),
+      ),
+      ListTile(
+        leading: Icon(Icons.monetization_on),
+        title: new Text('အခြေခံပစ္စည်းမှမြတ်စွန်းငွေ', style: TextStyle(fontSize: 11),),
+        selected: 3 == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(3),
+      ),
+      ListTile(
+        leading: Icon(Icons.monetization_on),
+        title: new Text('အသက်မွေး ပညာလုပ်ငန်းမှဝင်ငွေခွန်', style: TextStyle(fontSize: 11),),
+        selected: 4 == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(4),
+      ),
+      ListTile(
+        leading: Icon(Icons.monetization_on),
+        title: new Text('စီးပွားရေးလုပ်ငန်းမှဝင်ငွေခွန်(Individual)', style: TextStyle(fontSize: 11),),
+        selected: 5 == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(5),
+      ),
+      ListTile(
+        leading: Icon(Icons.monetization_on),
+        title: new Text('ပစ္စည်းဌားရမ်းခလုပ်ငန်းမှဝင်ငွေခွန်', style: TextStyle(fontSize: 11),),
+        selected: 6 == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(6),
+      )
+    ]);
 
     drawerOptions.add(new ListTile(
       leading: new Icon(Icons.info),
       title: new Text('About Us'),
-      selected: _selectedDrawerIndex == 10,
-      onTap: () => _onSelectItem(10),
+      selected: _selectedDrawerIndex == 7,
+      onTap: () => _onSelectItem(7),
     ));
 
     return new WillPopScope(

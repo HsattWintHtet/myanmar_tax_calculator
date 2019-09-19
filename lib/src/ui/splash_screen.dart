@@ -30,14 +30,6 @@ class _SplashScreenState extends State<SplashScreen> {
         MaterialPageRoute(builder: (context) => HomePage()),
       );
     });
-
-//    Timer(Duration(seconds: 3), () {
-//        Navigator.push(
-//          context,
-//          MaterialPageRoute(builder: (context) => HomePage()),
-//        );
-//      }
-//    );
   }
 
   Future<RemoteConfig> setupFetchRemoteConfig() async {

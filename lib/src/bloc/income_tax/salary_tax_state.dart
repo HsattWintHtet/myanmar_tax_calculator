@@ -117,6 +117,7 @@ class SalaryTaxState extends Equatable {
       maritalStatusOptionIndex: 1, // single
       partnerAllowance: 0,
       childrenAllowanceRate: 0,
+      childrenAllowance: 0,
       totalReductionAmount: 0,
       taxableAmount: 0,
       totalMonth: 0,
