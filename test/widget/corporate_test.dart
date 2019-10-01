@@ -40,6 +40,24 @@ void main() {
   testWidgets('Corporate Tax 2015-2016', (WidgetTester tester) async {
     await tester.pumpWidget(build());
 
+    await tester.tap(find.byKey(CorporateTaxWidgetKey.YEAR_WIDGET_KEY).at(0)); // 2014-2015
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
+
+    await tester.tap(find.byKey(CorporateTaxWidgetKey.BIZ_TYPE_WIDGET_KEY).at(0)); // 2014-2015
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
+
+    await tester.enterText(find.byKey(CorporateTaxWidgetKey.INCOME_WIDGET_KEY), '1000000'); // 1000000
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
+
+    await tester.tap(find.byKey(CorporateTaxWidgetKey.SERVICE_TYPE_OPTION_KEY1).at(1)); // 2014-2015
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
+
+    expect(tax.data, '25500');
+
     final yearSelectBoxFinder = find.byKey(CorporateTaxWidgetKey.YEAR_WIDGET_KEY);
     final bizTypeSelectBoxFinder = find.byKey(CorporateTaxWidgetKey.BIZ_TYPE_WIDGET_KEY);
     final incomeInputFinder = find.byKey(CorporateTaxWidgetKey.INCOME_WIDGET_KEY);

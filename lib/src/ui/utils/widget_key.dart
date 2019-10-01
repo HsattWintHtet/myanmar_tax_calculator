@@ -20,3 +20,14 @@ class CorporateTaxWidgetKey {
   static const Key TAX_AMOUNT_WIDGET_KEY = Key('16');
 
 }
+
+
+class BlackIncomeTaxWidgetKey {
+
+  static const Key YEAR_KEY = Key('1');
+  static const Key COST_KEY = Key('2');
+  static const Key INCOME_KEY = Key('3');
+  static const Key TAXABLE_INCOME_KEY = Key('4');
+  static const Key TAX_KEY = Key('5');
+
+}

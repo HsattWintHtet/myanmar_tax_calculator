@@ -120,6 +120,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                       ),
                       isEmpty: false,
                       child: DropdownButton<int>(
+                        key: YEAR_KEY,
                         value: state.yearOptionIndex,
                         onChanged: (int newValue) {
                           print('newvalue $newValue');
@@ -140,6 +141,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                     padding: new EdgeInsets.all(8.0),
                   ),
                   TextFormField(
+                    key: COST_KEY,
                     controller: _expenseInputController,
                       decoration: InputDecoration(
                         labelText: 'ဝယ်ယူ/တည်ဆောက်/ပြုပြင်သည့်တန်ဖိုး',
@@ -163,6 +165,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                     alignment: Alignment.centerLeft,
                   ),
                   TextFormField(
+                    key: INCOME_KEY,
                     controller: _whiteMoneyInputController,
                       decoration: InputDecoration(
                         labelText: '(နုတ်) ဝင်ငွေရလမ်းတင်ပြနိုင်သည့်ဝင်ငွေပမာဏ',
@@ -193,6 +196,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                     '${state.taxableAmount}',
                     style: new TextStyle(
                         fontSize: 16.0, fontWeight: FontWeight.bold),
+                    key: TAXABLE_INCOME_KEY,
                   ),
                   Text(
                     'ကျသင့်အခွန် (${state.startYear}-${state.endYear} ခုနှစ်ပြည်ထောင်စု၏ အခွန်အကောက် ဥပဒေအရ)',
@@ -202,6 +206,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                     '${state.taxAmount}',
                     style: new TextStyle(
                         fontSize: 18.0, fontWeight: FontWeight.bold,color: Colors.blue),
+                    key: TAX_KEY,
                   ),
                   new Padding(
                     padding: new EdgeInsets.all(10.0),
