@@ -21,6 +21,8 @@ class LotteryResultAPI {
         LotteryResult result = LotteryResult.fromJson(json.decode(response.body));
         print('after decode response body: $result');
         return result;
+      } else {
+        return null;
       }
   }).catchError((onError){
       // If that call was not successful, throw an error.

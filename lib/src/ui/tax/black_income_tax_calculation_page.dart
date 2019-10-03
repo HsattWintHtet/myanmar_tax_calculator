@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/bloc.dart';
-import 'package:myanmar_tax_calculator/src/services/tax_calculator.dart';
 import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/widget_key.dart';
 
 /// စည်းကြပ်မှုမှလွတ်ကင်းနေသောဝင်ငွေခွန် တွက်ချက်ခြင်း
 class TaxCalculationPage1 extends StatefulWidget {
@@ -31,22 +31,9 @@ class _MyAppState extends State<TaxCalculationPage1> {
 
   final BlackIncomeTaxBloc _blackIncomeBloc = BlackIncomeTaxBloc();
 
-  int _selectedIndex = 0;
 
   final InputData data = InputData();
 
-  TaxCalculator _taxCalculator;
-
-
-
-  Map<int, List<Item>> _taxCalRange;
-
-  String _startYear;
-  String _endYear;
-
-  double _eligibleTaxAmt = 0.0;
-
-  var _focusNode = new FocusNode();
 
   final _expenseInputController = TextEditingController();
   final _whiteMoneyInputController = TextEditingController();
@@ -120,7 +107,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                       ),
                       isEmpty: false,
                       child: DropdownButton<int>(
-                        key: YEAR_KEY,
+                        key: BlackIncomeTaxWidgetKey.YEAR_KEY,
                         value: state.yearOptionIndex,
                         onChanged: (int newValue) {
                           print('newvalue $newValue');
@@ -141,7 +128,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                     padding: new EdgeInsets.all(8.0),
                   ),
                   TextFormField(
-                    key: COST_KEY,
+                    key: BlackIncomeTaxWidgetKey.COST_KEY,
                     controller: _expenseInputController,
                       decoration: InputDecoration(
                         labelText: 'ဝယ်ယူ/တည်ဆောက်/ပြုပြင်သည့်တန်ဖိုး',
@@ -165,7 +152,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                     alignment: Alignment.centerLeft,
                   ),
                   TextFormField(
-                    key: INCOME_KEY,
+                    key: BlackIncomeTaxWidgetKey.INCOME_KEY,
                     controller: _whiteMoneyInputController,
                       decoration: InputDecoration(
                         labelText: '(နုတ်) ဝင်ငွေရလမ်းတင်ပြနိုင်သည့်ဝင်ငွေပမာဏ',
@@ -196,7 +183,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                     '${state.taxableAmount}',
                     style: new TextStyle(
                         fontSize: 16.0, fontWeight: FontWeight.bold),
-                    key: TAXABLE_INCOME_KEY,
+                    key: BlackIncomeTaxWidgetKey.TAXABLE_INCOME_KEY,
                   ),
                   Text(
                     'ကျသင့်အခွန် (${state.startYear}-${state.endYear} ခုနှစ်ပြည်ထောင်စု၏ အခွန်အကောက် ဥပဒေအရ)',
@@ -206,7 +193,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                     '${state.taxAmount}',
                     style: new TextStyle(
                         fontSize: 18.0, fontWeight: FontWeight.bold,color: Colors.blue),
-                    key: TAX_KEY,
+                    key: BlackIncomeTaxWidgetKey.TAX_KEY,
                   ),
                   new Padding(
                     padding: new EdgeInsets.all(10.0),

@@ -9,7 +9,7 @@ class CorporateTaxWidgetKey {
   static const Key SERVICE_TYPE_OPTION_KEY2 = Key('5');
   static const Key TAX_PERCENT_INPUT_KEY = Key('6');
   static const Key SERVICE_TAX_DESC_WIDGET_KEY = Key('7');
-  static const Key AMOUNT_TAX_WIDGET_KEY = Key('8');
+  static const Key AMOUNT_BIZ_TAX_WIDGET_KEY = Key('8');
   static const Key YEAR_DESC_WIDGET_KEY = Key('9');
   static const Key AMT_NOT_INCLUDED_WIDGET_KEY = Key('10');
   static const Key PRODUCTION_COST_WIDGET_KEY = Key('11');

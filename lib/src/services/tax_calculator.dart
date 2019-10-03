@@ -5,7 +5,7 @@ class TaxCalculator {
   Future<double> calculateTax(List<RuleItem> items, double eligibleAmount) async {
     double taxEligibleAmount = 0.0;
     if(eligibleAmount > 0) {
-      await items.forEach((item) {
+      items.forEach((item) {
         if (eligibleAmount >= item.startAmount && eligibleAmount >= item.endAmount) {
           taxEligibleAmount += ((1+item.endAmount-item.startAmount) * item.taxPercentage)/100;
 

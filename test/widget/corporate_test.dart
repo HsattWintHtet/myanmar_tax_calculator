@@ -22,13 +22,6 @@ final Map<int, String> yearList = {
   3: '၂၀၁၈-၂၀၁၉',
 };
 
-final Map<int, String> _goodTypesMap = {
-  0: '၂၀၁၄ ခုနှစ် ပြည်ထောင်စု၏ အခွန်အကောက်ဥပဒေပုဒ်မ ၁၁(ဂ) ပါ ကုန်စည်များနှင့် ပုဒ်မ ၁၁(စ) ပါ ဝန်ဆောင်မှုများ',
-  1: '၂၀၁၅ ခုနှစ် ပြည်ထောင်စု၏ အခွန်အကောင်ဥပဒေ ပုဒ်မ ၁၁(ဂ) ပါ ကုန်စည်များနှင့် ပုဒ်မ ၁၁(စ) ပါ ဝန်ဆောင်မှုများ',
-  2: '၂၀၁၆ ခုနှစ် ပြည်ထောင်စု၏ အခွန်အကောက်ဥပဒေပုဒ်မ ၁၄(က)ပါ ကုန်ပစ္စည်းများနှင့် ပုဒ်မ ၁၄(ဃ)ပါ ဝန်ဆောင်မှုများ',
-  3: '၂၀၁၆ ခုနှစ် ပြည်ထောင်စု၏ အခွန်အကောက်ဥပဒေပုဒ်မ ၁၄(က)ပါ ကုန်ပစ္စည်းများနှင့် ပုဒ်မ ၁၄(ဃ)ပါ ဝန်ဆောင်မှုများ',
-};
-
 
 Widget build() {
   return new MaterialApp(
@@ -40,70 +33,65 @@ void main() {
   testWidgets('Corporate Tax 2015-2016', (WidgetTester tester) async {
     await tester.pumpWidget(build());
 
-    await tester.tap(find.byKey(CorporateTaxWidgetKey.YEAR_WIDGET_KEY).at(0)); // 2014-2015
+    await tester.tap(find.byKey(CorporateTaxWidgetKey.YEAR_WIDGET_KEY));
     await tester.pump();
     await tester.pump(const Duration(seconds: 1)); // finish the menu animation
 
-    await tester.tap(find.byKey(CorporateTaxWidgetKey.BIZ_TYPE_WIDGET_KEY).at(0)); // 2014-2015
+    await tester.tap(find.text('၂၀၁၅-၂၀၁၆').last);
     await tester.pump();
     await tester.pump(const Duration(seconds: 1)); // finish the menu animation
 
-    await tester.enterText(find.byKey(CorporateTaxWidgetKey.INCOME_WIDGET_KEY), '1000000'); // 1000000
+
+    await tester.tap(find.byKey(CorporateTaxWidgetKey.BIZ_TYPE_WIDGET_KEY));
     await tester.pump();
     await tester.pump(const Duration(seconds: 1)); // finish the menu animation
 
-    await tester.tap(find.byKey(CorporateTaxWidgetKey.SERVICE_TYPE_OPTION_KEY1).at(1)); // 2014-2015
+    await tester.tap(find.text('ကုမ္ပဏီ').last);
     await tester.pump();
     await tester.pump(const Duration(seconds: 1)); // finish the menu animation
 
-    expect(tax.data, '25500');
+    await tester.enterText(find.byKey(CorporateTaxWidgetKey.INCOME_WIDGET_KEY), '1000000');
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
 
-    final yearSelectBoxFinder = find.byKey(CorporateTaxWidgetKey.YEAR_WIDGET_KEY);
-    final bizTypeSelectBoxFinder = find.byKey(CorporateTaxWidgetKey.BIZ_TYPE_WIDGET_KEY);
-    final incomeInputFinder = find.byKey(CorporateTaxWidgetKey.INCOME_WIDGET_KEY);
-    final serviceRadioBtnOneFinder = find.byKey(CorporateTaxWidgetKey.SERVICE_TYPE_OPTION_KEY1);
-    final serviceRadioBtnTwoFinder = find.byKey(CorporateTaxWidgetKey.SERVICE_TYPE_OPTION_KEY2);
-    final taxPercentInputFinder = find.byKey(CorporateTaxWidgetKey.TAX_PERCENT_INPUT_KEY);
-    final taxDescLabelFinder = find.byKey(CorporateTaxWidgetKey.SERVICE_TAX_DESC_WIDGET_KEY);
-    final taxAmountInputFinder = find.byKey(CorporateTaxWidgetKey.AMOUNT_TAX_WIDGET_KEY);
-    final taxNotIncludedInputFinder = find.byKey(CorporateTaxWidgetKey.AMT_NOT_INCLUDED_WIDGET_KEY);
-
-    await tester.tap(yearSelectBoxFinder);
-    await tester.tap(find.text(yearList[0]));
-    await tester.pumpAndSettle();
+    await tester.tap(find.text('အခြား'));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
 
 
-    await tester.tap(find.text(corporateTypes[0])); await tester.pumpAndSettle();
 
-    await tester.tap(find.text(_goodTypesMap[0])); await tester.pumpAndSettle();
+//    await tester.enterText(find.byKey(CorporateTaxWidgetKey.PRODUCTION_COST_WIDGET_KEY), '100000');
+//    await tester.pump();
+//    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
 
-    await tester.enterText(incomeInputFinder, '15000000'); await tester.pumpAndSettle();
+    var taxPercent = find.byKey(CorporateTaxWidgetKey.TAX_PERCENT_INPUT_KEY).evaluate().single.widget as Text; // အခွန်ရာခိုင်နှုန်း
+    expect(taxPercent.data, '0');
 
-    await tester.drag(find.byType(ListView), Offset(0.0, -300)); await tester.pump(); // flush the widget tree
+    var taxable = find.byKey(CorporateTaxWidgetKey.AMOUNT_BIZ_TAX_WIDGET_KEY).evaluate().single.widget as Text; // ၃။ ကျသင့်ကုန်သွယ်လုပ်ငန်းခွန် (ဝင်ငွေ x အခွန်ရာခိုင်နှုန်း)/(၁၀၀+အခွန်ရာခိုင်နှုန်း)
+    expect(taxable.data, '0');
 
-    final productionCostInputFinder = find.byKey(CorporateTaxWidgetKey.PRODUCTION_COST_WIDGET_KEY);
-    final basicProfitInputFinder = find.byKey(CorporateTaxWidgetKey.BASIC_PROFIT_WIDGET_KEY);
-    final mgntCostInputFinder = find.byKey(CorporateTaxWidgetKey.MGNT_COST_WIDGET_KEY);
-    final depreciationInputFinder = find.byKey(CorporateTaxWidgetKey.DEPRECIATION_WIDGET_KEY);
-    final netProfitInputFinder = find.byKey(CorporateTaxWidgetKey.NET_PROFIT_WIDGET_KEY);
-    final totalTaxInputFinder = find.byKey(CorporateTaxWidgetKey.TAX_AMOUNT_WIDGET_KEY);
-
-    await tester.enterText(productionCostInputFinder, '100000'); await tester.pumpAndSettle();
-    await tester.enterText(find.byKey(CorporateTaxWidgetKey.MGNT_COST_WIDGET_KEY), '200000'); await tester.pumpAndSettle();
-    await tester.enterText(depreciationInputFinder, '300000'); await tester.pumpAndSettle();
+    var amtNotIncluded = find.byKey(CorporateTaxWidgetKey.AMT_NOT_INCLUDED_WIDGET_KEY).evaluate().single.widget as Text; // ၄။ ကုန်သွယ်လုပ်ငန်းခွန်မပါရငွေ (၂ - ၃)
+    expect(amtNotIncluded.data, '1000000');
 
 
-    var text = totalTaxInputFinder.evaluate().single.widget as Text;
-    print('tax amount: ${text.data}');
-//    expect(find.text('3600000'), findsOneWidget);
-//    expect(find.text('14400000'), findsOneWidget);
-//    expect(find.text('15000000'), findsOneWidget);
-//    expect(find.text('3600000'), findsOneWidget);
-//    var text = finder.evaluate().single.widget as Text;
-//    print(text.data);
-//
-//    expect(find.text(TaxConstantUtil.yearInfoMap[0].type), findsOneWidget);
-//    expect(find.text(_goodTypesMap[0]), findsOneWidget);
+    var rawProfit = find.byKey(CorporateTaxWidgetKey.BASIC_PROFIT_WIDGET_KEY).evaluate().single.widget as Text;
+    expect(rawProfit.data, '900000');
+
+    await tester.enterText(find.byKey(CorporateTaxWidgetKey.MGNT_COST_WIDGET_KEY), '50000');
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
+
+
+    await tester.enterText(find.byKey(CorporateTaxWidgetKey.DEPRECIATION_WIDGET_KEY), '100000');
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1)); // finish the menu animation
+
+    var netProfit = find.byKey(CorporateTaxWidgetKey.NET_PROFIT_WIDGET_KEY).evaluate().single.widget as Text;
+    expect(netProfit.data, '750000');
+
+    var tax = find.byKey(CorporateTaxWidgetKey.TAX_AMOUNT_WIDGET_KEY).evaluate().single.widget as Text;
+    expect(tax.data, '187500');
+
 
   });
 

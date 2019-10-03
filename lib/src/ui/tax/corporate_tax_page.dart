@@ -119,7 +119,6 @@ class _MyAppState extends State<CorporateTaxCalculationPage> {
                         ),
                       )),
                   DropdownButtonHideUnderline(
-                    key: CorporateTaxWidgetKey.YEAR_WIDGET_KEY,
                     child: InputDecorator(
                       decoration: const InputDecoration(
                         labelText: '၁။ စည်းကြပ်နှစ်',
@@ -127,6 +126,7 @@ class _MyAppState extends State<CorporateTaxCalculationPage> {
                       ),
                       isEmpty: false,
                       child: DropdownButton<int>(
+                        key: CorporateTaxWidgetKey.YEAR_WIDGET_KEY,
                         value: state.yearOptionIndex,
                         onChanged: _onYearOptionChange,
                         items: _corporateBloc.yearList.entries.map((MapEntry<int, String> e) {
@@ -144,7 +144,6 @@ class _MyAppState extends State<CorporateTaxCalculationPage> {
                     padding: new EdgeInsets.all(8.0),
                   ),
                   DropdownButtonHideUnderline(
-                    key: CorporateTaxWidgetKey.BIZ_TYPE_WIDGET_KEY,
                     child: InputDecorator(
                       decoration: const InputDecoration(
                         labelText: 'စီးပွားရေးလုပ်ငန်းအမျိုးအစား',
@@ -152,6 +151,7 @@ class _MyAppState extends State<CorporateTaxCalculationPage> {
                       ),
                       isEmpty: false,
                       child: DropdownButton<int>(
+                        key: CorporateTaxWidgetKey.BIZ_TYPE_WIDGET_KEY,
                         value: state.bizTypeOptionIndex,
                         onChanged: _onBizTypeOptionChange,
                         items: _corporateBloc.corporateTypes.entries
@@ -250,7 +250,7 @@ class _MyAppState extends State<CorporateTaxCalculationPage> {
                     '${state.amountOfServiceTax}',
                     style: new TextStyle(
                         fontSize: 16.0, fontWeight: FontWeight.bold),
-                    key: CorporateTaxWidgetKey.AMOUNT_TAX_WIDGET_KEY,
+                    key: CorporateTaxWidgetKey.AMOUNT_BIZ_TAX_WIDGET_KEY,
                   ),
                   new Padding(
                     padding: new EdgeInsets.all(8.0),

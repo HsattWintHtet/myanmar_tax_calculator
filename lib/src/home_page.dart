@@ -1,10 +1,6 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myanmar_tax_calculator/src/ui/tax/corporate_tax_page.dart';
-import 'package:myanmar_tax_calculator/src/ui/lottery_no_reg_list_fragment.dart';
-import 'package:myanmar_tax_calculator/src/ui/lottery_no_reg_fragment.dart';
-import 'package:myanmar_tax_calculator/src/ui/lottery_search_fragment.dart';
 import 'package:myanmar_tax_calculator/src/ui/about_us_fragment.dart';
 import 'package:myanmar_tax_calculator/src/ui/tax/rental_service_tax_page.dart';
 import 'package:myanmar_tax_calculator/src/ui/tax/individual_business_tax_page.dart';
@@ -57,7 +53,6 @@ class HomePageState extends State<HomePage> with RouteAware {
 
 
   _getDrawerItemWidget(int pos) {
-    String pageName = '';
 
     switch (pos) {
 //      case 0:
