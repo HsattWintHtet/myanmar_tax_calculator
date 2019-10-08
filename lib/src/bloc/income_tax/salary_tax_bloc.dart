@@ -115,7 +115,7 @@ class SalaryTaxBloc extends Bloc<SalaryTaxEvent, SalaryTaxState> {
 
     if (event is SSBAmountChangeEvent) {
       yield currentState.copyWith(
-        ssbAmount: event.ssbAmount,
+        ssbAmount: event.ssbAmount*currentState.noOfMonth,
       );
     }
     if (event is DonationAmountChangeEvent) {
