@@ -377,7 +377,7 @@ class _MyAppState extends State<IncomeTaxCalculationPage> {
                             onChanged: _onMaritalStatusOptionChange,
                           ),
                           new Text(
-                            'မရှိ',
+                            'မရှိ/မရှိ',
                             style: new TextStyle(fontSize: 12.0),
                           ),
                         ]),
@@ -418,7 +418,7 @@ class _MyAppState extends State<IncomeTaxCalculationPage> {
                     TextFormField(
                       controller: _ssbAmountController,
                       decoration: InputDecoration(
-                        labelText: 'လူမှုဖူလုံရေးရန်ပုံငွေထည့်ဝင်ငွေ',
+                        labelText: 'လူမှုဖူလုံရေးရန်ပုံငွေတစ်လထည့်ဝင်ငွေ',
                         labelStyle: new TextStyle(fontSize: 12.0),
                         hintText: "0",
                       ),
@@ -450,7 +450,7 @@ class _MyAppState extends State<IncomeTaxCalculationPage> {
                     new Padding(
                       padding: new EdgeInsets.only(top: 8.0, bottom: 8.0),
                     ),
-                    buildLabelWidget('ကျသင့်ဝင်ငွေခွန်(${state.totalMonth} လ)'),
+                    buildLabelWidget('ကျသင့်ဝင်ငွေခွန်(${state.noOfMonth} လ)'),
                     buildMainLabelWidget('${state.taxAmount}'),
                     ListView.builder(
                       itemBuilder: (context, index) {
