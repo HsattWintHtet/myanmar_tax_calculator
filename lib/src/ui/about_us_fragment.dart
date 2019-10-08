@@ -15,35 +15,36 @@ class AboutUsFragment extends StatelessWidget {
     final TextStyle linkStyle = themeData.textTheme.body2.copyWith(color: themeData.accentColor);
 
 
-    return  ListView(
-        shrinkWrap: true,
-        padding: const EdgeInsets.all(20.0),
-        children: <Widget>[
-          RichText(
-            text: TextSpan(
-              children: <TextSpan>[
-                TextSpan(
-                  style: aboutTextStyle,
-                  text: """
+    return Center(
+      child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(20.0),
+          children: <Widget>[
+            RichText(
+              text: TextSpan(
+                children: <TextSpan>[
+                  TextSpan(
+                    style: aboutTextStyle,
+                    text: """
 KYAW SWAR AUNG
 Senior Software Developer
 Email: kyawswaaung87@gmail.com
+
+အခွန်တွတ်ပုံများကို Internal Revenue Department Myanmar(https://www.ird.gov.mm/my) မှကူးယူမှီညမ်းထားခြင်းဖြစ်ပါသည်။
 
 Any issues? Any Error? please contact me.
 အကြံပြုလိုပါက ‌အထက်ပါ email သို့ဆတ်သွယ်နိင်ပါသည်။
 
 I used some logo from this free websites https://icon-icons.com/
-                  """,
-                ),
-                _LinkTextSpan(
-                  style: linkStyle,
-                  url: ' https://www.linkedin.com/in/kyaw-swar-aung-b1336427',
-                  text: """ https://www.linkedin.com/in/kyaw-swar-aung-b1336427"""
-                ),
-              ],
+
+
+                    """,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ]
+          ]
+      ),
     );
   }
 
