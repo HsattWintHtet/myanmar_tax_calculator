@@ -88,6 +88,9 @@ class _SplashScreenState extends State<SplashScreen> {
                               fontWeight: FontWeight.bold,
                               fontSize: 24.0),
                         ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 10.0),
+                        ),
                         Text(ConstantUtils.APP_DESCRIPTION)
 
                       ],
