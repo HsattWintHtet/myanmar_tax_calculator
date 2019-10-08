@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/profit_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/profit_tax/profit_service.dart';
+import 'package:myanmar_tax_calculator/src/bloc/profit_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/bloc/profit_tax/profit_service.dart';
 
 class ProfitTaxBloc extends Bloc<ProfitEvent, ProfitState> {
 

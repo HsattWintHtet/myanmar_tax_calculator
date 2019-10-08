@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 import 'package:meta/meta.dart';
 
 @immutable
@@ -117,6 +117,7 @@ class SalaryTaxState extends Equatable {
       maritalStatusOptionIndex: 1, // single
       partnerAllowance: 0,
       childrenAllowanceRate: 0,
+      childrenAllowance: 0,
       totalReductionAmount: 0,
       taxableAmount: 0,
       totalMonth: 0,

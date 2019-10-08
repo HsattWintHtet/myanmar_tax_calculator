@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ird_myanmar_app/src/ui/splash_screen.dart';
+import 'package:myanmar_tax_calculator/src/ui/splash_screen.dart';
 
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 
 
 void main() {
@@ -18,6 +20,19 @@ void main() {
   runApp(new MyMainApp());
 }
 
+
+Future<RemoteConfig> setupRemoteConfig() async {
+  final RemoteConfig remoteConfig = await RemoteConfig.instance;
+  // Enable developer mode to relax fetch throttling
+  remoteConfig.setConfigSettings(RemoteConfigSettings(debugMode: true));
+  remoteConfig.setDefaults(<String, dynamic>{
+    'welcome': 'default welcome',
+    'hello': 'default hello',
+  });
+  return remoteConfig;
+}
+
+
 class MyMainApp extends StatelessWidget {
 
 
@@ -26,7 +41,7 @@ class MyMainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Pyidaungsu',primarySwatch: blue),
-      title: 'IRD Myanmar',
+      title: 'တွက်ချက် Myanmar',
       home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );

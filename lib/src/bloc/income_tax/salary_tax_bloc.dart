@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/income_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/income_tax/SalaryTaxService.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/income_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/bloc/income_tax/SalaryTaxService.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class SalaryTaxBloc extends Bloc<SalaryTaxEvent, SalaryTaxState> {
   @override
@@ -115,7 +115,7 @@ class SalaryTaxBloc extends Bloc<SalaryTaxEvent, SalaryTaxState> {
 
     if (event is SSBAmountChangeEvent) {
       yield currentState.copyWith(
-        ssbAmount: event.ssbAmount,
+        ssbAmount: event.ssbAmount*currentState.noOfMonth,
       );
     }
     if (event is DonationAmountChangeEvent) {

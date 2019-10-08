@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/black_income_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/services/tax_calculator.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/services/tax_calculator.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 /// စည်းကြပ်မှုမှလွတ်ကင်းနေသောဝင်ငွေခွန် တွက်ချက်ခြင်း
 class TaxCalculationPage1 extends StatefulWidget {

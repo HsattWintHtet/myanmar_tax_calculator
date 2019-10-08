@@ -1,6 +1,7 @@
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:ird_myanmar_app/src/ui/model/LotteryResultUIParam.dart';
+import 'package:myanmar_tax_calculator/src/ui/model/LotteryResultUIParam.dart';
 
 class ConstantUtils {
 
@@ -8,7 +9,11 @@ class ConstantUtils {
 
   static const int INPUT_FIELD_LENGTH = 25;
 
-  static const BASE_URL = "https://ird-myanmar-app.herokuapp.com/result";
+  // this data will get from firebase remote config
+  static String BASE_URL = "https://www.localhost.com";
+
+  static const String APP_NAME = 'တွက်ချက်';
+  static const String APP_DESCRIPTION = 'A Tax Calculator based on IRD Myanmar website.';
 
   static final KEYS = {
     Key('1'), Key('2'), Key('3'),Key('4'),

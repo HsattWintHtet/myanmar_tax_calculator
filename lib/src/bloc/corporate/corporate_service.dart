@@ -1,7 +1,7 @@
 
 
-import 'package:ird_myanmar_app/src/bloc/corporate/bloc.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/corporate/bloc.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class CorporateService {
 

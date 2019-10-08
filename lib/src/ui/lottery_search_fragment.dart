@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:ird_myanmar_app/src/model/Lottery_result_param.dart';
-import 'package:ird_myanmar_app/src/presenter/lottery_result_presenter.dart';
-import 'package:ird_myanmar_app/src/ui/model/LotteryResultUIParam.dart';
+import 'package:myanmar_tax_calculator/src/model/Lottery_result_param.dart';
+import 'package:myanmar_tax_calculator/src/presenter/lottery_result_presenter.dart';
+import 'package:myanmar_tax_calculator/src/ui/model/LotteryResultUIParam.dart';
 import 'package:connectivity/connectivity.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class LotterySearchFragment extends StatefulWidget {
   @override

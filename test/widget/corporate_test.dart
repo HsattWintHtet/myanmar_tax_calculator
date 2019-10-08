@@ -1,8 +1,8 @@
 // Imports the Flutter Driver API
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ird_myanmar_app/src/ui/tax/corporate_tax_page.dart';
-import 'package:ird_myanmar_app/src/ui/utils/util_package.dart';
+import 'package:myanmar_tax_calculator/src/ui/tax/corporate_tax_page.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/util_package.dart';
 
 final Map<int, String> corporateTypes = {
   0: 'ကုမ္ပဏီ',

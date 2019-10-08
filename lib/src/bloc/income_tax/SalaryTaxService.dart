@@ -1,8 +1,8 @@
 
 
-import 'package:ird_myanmar_app/src/bloc/income_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/services/tax_calculator.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/income_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/services/tax_calculator.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class SalaryTaxService {
 

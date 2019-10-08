@@ -1,7 +1,7 @@
 import 'package:event_bus/event_bus.dart';
-import 'package:ird_myanmar_app/src/presenter/lottery_result_presenter.dart';
-import 'package:ird_myanmar_app/src/services/lottery_api_provider.dart';
-import 'package:ird_myanmar_app/src/services/lottery_result_repo.dart';
+import 'package:myanmar_tax_calculator/src/presenter/lottery_result_presenter.dart';
+import 'package:myanmar_tax_calculator/src/services/lottery_api_provider.dart';
+import 'package:myanmar_tax_calculator/src/services/lottery_result_repo.dart';
 
 class LoadResultEvent{}
 

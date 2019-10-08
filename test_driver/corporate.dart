@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_driver/driver_extension.dart';
-import 'package:ird_myanmar_app/src/ui/tax/corporate_tax_page.dart';
+import 'package:myanmar_tax_calculator/src/ui/tax/corporate_tax_page.dart';
 
 void main() {
   // This line enables the extension

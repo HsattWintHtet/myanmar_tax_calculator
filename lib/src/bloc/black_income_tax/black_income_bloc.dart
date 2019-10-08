@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/black_income_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/black_income_tax/black_income_service.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/black_income_service.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class BlackIncomeTaxBloc extends Bloc<BlackIncomeEvent, BlackIncomeState> {
 

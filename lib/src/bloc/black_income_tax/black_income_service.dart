@@ -1,6 +1,6 @@
 
-import 'package:ird_myanmar_app/src/bloc/black_income_tax/black_income_state.dart';
-import 'package:ird_myanmar_app/src/services/tax_calculator.dart';
+import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/black_income_state.dart';
+import 'package:myanmar_tax_calculator/src/services/tax_calculator.dart';
 
 class BlackIncomeService {
 

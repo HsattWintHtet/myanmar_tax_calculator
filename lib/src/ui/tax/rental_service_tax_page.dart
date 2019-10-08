@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ird_myanmar_app/src/bloc/rental_service_tax/bloc.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/src/bloc/rental_service_tax/bloc.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 /// ပစ္စည်းဌားရမ်းခလုပ်ငန်းမှဝင်ငွေခွန် တွက်ချက်ခြင်း
 class RentalServiceTaxCalculationPage extends StatefulWidget {

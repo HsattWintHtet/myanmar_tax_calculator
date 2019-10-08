@@ -1,8 +1,8 @@
 
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:ird_myanmar_app/main.dart';
-import 'package:ird_myanmar_app/src/ui/utils/constant_utils.dart';
+import 'package:myanmar_tax_calculator/main.dart';
+import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 main() {
   testWidgets('Lottery Search test', (WidgetTester tester) async {
