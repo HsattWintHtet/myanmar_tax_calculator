@@ -101,7 +101,7 @@ class HomePageState extends State<HomePage> with RouteAware {
 
   var pageNames = {
 //    0:'LotterySearchFragment', TODO add later
-    0:'TaxCalculationPage1',
+    0:'BlackIncomeTaxCalculationPage',
     1:'CorporateTaxCalculationPage',
     2:'IncomeTaxCalculationPage',
     3:'ProfitTaxCalculationPage',
