@@ -30,10 +30,10 @@ KYAW SWAR AUNG
 Senior Software Developer
 Email: kyawswaaung87@gmail.com
 
-အခွန်တွတ်ပုံများကို Internal Revenue Department Myanmar(https://www.ird.gov.mm/my) မှကူးယူမှီညမ်းထားခြင်းဖြစ်ပါသည်။
+အခွန်တွက်ပုံများကို Internal Revenue Department Myanmar(https://www.ird.gov.mm/my) မှကူးယူမှီညမ်းထားခြင်းဖြစ်ပါသည်။
 
 Any issues? Any Error? please contact me.
-အကြံပြုလိုပါက ‌အထက်ပါ email သို့ဆတ်သွယ်နိင်ပါသည်။
+အကြံပြုလိုပါက ‌အထက်ပါ email သို့ဆက်သွယ်နိင်ပါသည်။
 
 I used some logo from this free websites https://icon-icons.com/
 
