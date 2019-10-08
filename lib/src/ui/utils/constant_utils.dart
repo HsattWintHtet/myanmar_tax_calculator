@@ -13,7 +13,7 @@ class ConstantUtils {
   static String BASE_URL = "https://www.localhost.com";
 
   static const String APP_NAME = 'တွက်ချက်';
-  static const String APP_DESCRIPTION = 'a Tax Calculator \nbased on IRD Myanmar website.';
+  static const String APP_DESCRIPTION = 'A Tax Calculator based on IRD Myanmar website.';
 
   static final KEYS = {
     Key('1'), Key('2'), Key('3'),Key('4'),
