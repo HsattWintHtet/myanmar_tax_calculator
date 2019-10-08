@@ -37,7 +37,7 @@ class HomePage extends StatefulWidget {
     new DrawerItem("ပစ္စည်းဌားရမ်းခလုပ်ငန်းမှဝင်ငွေခွန်", Icons.search,7),
 //    new DrawerItem("Lottery Number Register", Icons.save,8), TODO add later
 //    new DrawerItem("Lottery Number List", Icons.list,9), TODO add later
-    new DrawerItem("About Us", Icons.info,10),
+    new DrawerItem("About Developer", Icons.info,10),
   ];
 
   @override
@@ -180,7 +180,7 @@ class HomePageState extends State<HomePage> with RouteAware {
 
     drawerOptions.add(new ListTile(
       leading: new Icon(Icons.info),
-      title: new Text('About Us'),
+      title: new Text('About Developer'),
       selected: _selectedDrawerIndex == 7,
       onTap: () => _onSelectItem(7),
     ));
