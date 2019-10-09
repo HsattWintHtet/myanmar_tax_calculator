@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/bloc/profit_tax/bloc.dart';
 import 'package:myanmar_tax_calculator/src/bloc/profit_tax/profit_service.dart';
 
@@ -6,6 +7,8 @@ class ProfitTaxBloc extends Bloc<ProfitEvent, ProfitState> {
 
   @override
   ProfitState get initialState => ProfitState.initial();
+
+  final Logger log = new Logger('profit_tax_bloc');
 
   ProfitService profitService = ProfitService();
 
@@ -153,8 +156,8 @@ class ProfitTaxBloc extends Bloc<ProfitEvent, ProfitState> {
 
   @override
   void onError(Object error, StackTrace stacktrace) {
-    print(error);
-    print(stacktrace);
+    log.severe(error);
+    log.severe(stacktrace);
   }
 
   @override
@@ -164,9 +167,9 @@ class ProfitTaxBloc extends Bloc<ProfitEvent, ProfitState> {
 
   @override
   void onTransition(Transition<ProfitEvent, ProfitState> transition) {
-    print(transition.currentState);
-    print(transition.event);
-    print(transition.nextState);
+    log.info(transition.currentState);
+    log.info(transition.event);
+    log.info(transition.nextState);
   }
 }
 

@@ -1,9 +1,13 @@
 import 'package:bloc/bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/bloc.dart';
 import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/black_income_service.dart';
 import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class BlackIncomeTaxBloc extends Bloc<BlackIncomeEvent, BlackIncomeState> {
+
+
+  final Logger log = new Logger('black_income_tax_bloc');
 
   @override
   BlackIncomeState get initialState => BlackIncomeState.initial(taxCalculationRules[0]);
@@ -87,14 +91,14 @@ class BlackIncomeTaxBloc extends Bloc<BlackIncomeEvent, BlackIncomeState> {
     } else {
       yield await blackIncomeService.calculateAll(currentState)
           .then((value)=>value)
-          .catchError((onerror){print(onerror);});
+          .catchError((onerror){log.severe(onerror);});
     }
   }
 
   @override
   void onError(Object error, StackTrace stacktrace) {
-    print(error);
-    print(stacktrace);
+    log.severe(error);
+    log.severe(stacktrace);
   }
 
   @override
@@ -104,9 +108,9 @@ class BlackIncomeTaxBloc extends Bloc<BlackIncomeEvent, BlackIncomeState> {
 
   @override
   void onTransition(Transition<BlackIncomeEvent, BlackIncomeState> transition) {
-    print(transition.currentState);
-    print(transition.event);
-    print(transition.nextState);
+    log.info(transition.currentState);
+    log.info(transition.event);
+    log.info(transition.nextState);
   }
 }
 

@@ -22,17 +22,14 @@ class ProfitService {
   }
 
   int calculateAllowranceAmount(int sellingPrice, int additionalValue, int marketingCost) {
-    print('_calculateAllowranceAmount $sellingPrice, $additionalValue, $marketingCost');
     return sellingPrice + additionalValue + marketingCost;
   }
 
   int calculateProfit(int pricingByOrg, int allowrance) {
-    print('Calculate Profit $pricingByOrg, $allowrance');
     return pricingByOrg - allowrance;
   }
 
   double calculateTax(int profit) {
-    print('Calculate Tax $profit');
     return profit * 0.1;
   }
 }

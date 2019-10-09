@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/bloc/black_income_tax/bloc.dart';
 import 'package:myanmar_tax_calculator/src/services/tax_calculator.dart';
 import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
@@ -27,6 +28,8 @@ class InputData{
 }
 
 class _MyAppState extends State<TaxCalculationPage1> {
+
+  final Logger log = new Logger('black_income_tax_page');
   final _formKey = GlobalKey<FormState>();
 
   final BlackIncomeTaxBloc _blackIncomeBloc = BlackIncomeTaxBloc();
@@ -54,7 +57,6 @@ class _MyAppState extends State<TaxCalculationPage1> {
   @override
   void initState() {
     super.initState();
-
     _expenseInputController.addListener(_onExpenseTextChange);
     _whiteMoneyInputController.addListener(_onWhiteMoneyTextChange);
   }
@@ -122,7 +124,7 @@ class _MyAppState extends State<TaxCalculationPage1> {
                       child: DropdownButton<int>(
                         value: state.yearOptionIndex,
                         onChanged: (int newValue) {
-                          print('newvalue $newValue');
+                          log.info('newvalue $newValue');
                           _blackIncomeBloc.dispatch(YearOptionChangeEvent(newValue));
                         },
                         items: _blackIncomeBloc.yearList.entries.map((MapEntry<int, String> e) {

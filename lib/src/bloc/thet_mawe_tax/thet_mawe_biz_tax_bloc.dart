@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/bloc/thet_mawe_tax/bloc.dart';
 import 'package:myanmar_tax_calculator/src/bloc/thet_mawe_tax/ThetMaweBizTaxService.dart';
 import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
@@ -10,6 +11,7 @@ class ThetMaweBizTaxBloc extends Bloc<ThetMaweBizTaxEvent, ThetMaweBizTaxState> 
 
   final ThetMaweBizService individualBizService = ThetMaweBizService();
 
+  final Logger log = new Logger('thet_mawe_tax_bloc');
 
   final Map<int, List> yearList = {
     0: ['၂၀၁၅-၂၀၁၆', '၁၅၀', '၂၀၁၄', 15000000],
@@ -129,13 +131,13 @@ class ThetMaweBizTaxBloc extends Bloc<ThetMaweBizTaxEvent, ThetMaweBizTaxState> 
 
     yield await individualBizService.calculateAll(currentState)
         .then((value)=>value)
-        .catchError((onerror){print(onerror);});
+        .catchError((onerror){log.severe(onerror);});
   }
 
   @override
   void onError(Object error, StackTrace stacktrace) {
-    print(error);
-    print(stacktrace);
+    log.severe(error);
+    log.severe(stacktrace);
   }
 
   @override
@@ -145,9 +147,9 @@ class ThetMaweBizTaxBloc extends Bloc<ThetMaweBizTaxEvent, ThetMaweBizTaxState> 
 
   @override
   void onTransition(Transition<ThetMaweBizTaxEvent, ThetMaweBizTaxState> transition) {
-    print(transition.currentState);
-    print(transition.event);
-    print(transition.nextState);
+    log.info(transition.currentState);
+    log.info(transition.event);
+    log.info(transition.nextState);
   }
 }
 
