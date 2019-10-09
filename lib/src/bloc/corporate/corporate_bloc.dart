@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/bloc/corporate/bloc.dart';
 import 'package:myanmar_tax_calculator/src/bloc/corporate/corporate_service.dart';
 import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
@@ -6,6 +7,8 @@ import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 class CorporateBloc extends Bloc<CorporateEvent, CorporateState> {
   @override
   CorporateState get initialState => CorporateState.initial();
+
+  final Logger log = new Logger('corporate_bloc');
 
   final CorporateService corporateService = CorporateService();
 
@@ -98,8 +101,8 @@ class CorporateBloc extends Bloc<CorporateEvent, CorporateState> {
 
   @override
   void onError(Object error, StackTrace stacktrace) {
-    print(error);
-    print(stacktrace);
+    log.severe(error);
+    log.severe(stacktrace);
   }
 
   @override
@@ -109,8 +112,8 @@ class CorporateBloc extends Bloc<CorporateEvent, CorporateState> {
 
   @override
   void onTransition(Transition<CorporateEvent, CorporateState> transition) {
-    print(transition.currentState);
-    print(transition.event);
+    log.info(transition.currentState);
+    log.info(transition.event);
   }
 }
 

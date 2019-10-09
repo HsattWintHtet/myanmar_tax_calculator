@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/bloc/rental_service_tax/bloc.dart';
 import 'package:myanmar_tax_calculator/src/bloc/rental_service_tax/rental_service.dart';
 
@@ -6,6 +7,8 @@ class RentalServiceBloc extends Bloc<RentalServiceEvent, RentalServiceState> {
 
   @override
   RentalServiceState get initialState => RentalServiceState.initial(0, yearList[0][0], 1, businessTax[1]);
+
+  final Logger log = new Logger('rental_tax_bloc');
 
   RentalService rentalService = RentalService();
 
@@ -156,15 +159,15 @@ class RentalServiceBloc extends Bloc<RentalServiceEvent, RentalServiceState> {
     if (event is ClearEvent) {
       yield RentalServiceState.initial(0, yearList[0][0], 0, businessTax[0]);
     } else {
-      yield await rentalService.calculateAll(currentState).then((value)=>value).catchError((onerror){print(onerror);});
+      yield await rentalService.calculateAll(currentState).then((value)=>value).catchError((onerror){log.info(onerror);});
     }
   }
 
 
   @override
   void onError(Object error, StackTrace stacktrace) {
-    print(error);
-    print(stacktrace);
+    log.severe(error);
+    log.severe(stacktrace);
   }
 
   @override
@@ -174,9 +177,9 @@ class RentalServiceBloc extends Bloc<RentalServiceEvent, RentalServiceState> {
 
   @override
   void onTransition(Transition<RentalServiceEvent, RentalServiceState> transition) {
-    print(transition.currentState);
-    print(transition.event);
-    print(transition.nextState);
+    log.info(transition.currentState);
+    log.info(transition.event);
+    log.info(transition.nextState);
   }
 }
 

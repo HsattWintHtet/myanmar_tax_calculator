@@ -1,4 +1,5 @@
 import 'package:event_bus/event_bus.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/model/Lottery_result_param.dart';
 import 'package:myanmar_tax_calculator/src/model/lottery_result.dart';
 import 'package:myanmar_tax_calculator/src/services/lottery_api_provider.dart';
@@ -24,6 +25,8 @@ class ProgressDialogEvent {
 
 class LotteryResultPresenter {
 
+  final Logger log = new Logger('lottery_result_presenter');
+
   final lotteryAPI = LotteryResultAPI();
 
   final lotteryRepo = LotteryResultRepository();
@@ -37,14 +40,14 @@ class LotteryResultPresenter {
   void _registerEvent() {
     eventBus.on<LotterySearchEvent>().listen((event) {
       // All events are of type UserLoggedInEvent (or subtypes of it).
-      print(event.param);
+      log.info(event.param);
       eventBus.fire(ProgressDialogEvent(true));
       lotteryAPI.postLotteryResult(event.param).then((result) {
-        print('result $result');
+        log.info('result $result');
         eventBus.fire(ProgressDialogEvent(false));
         eventBus.fire(LotteryResponseEvent(result));
       }).catchError((e){
-        print(e.toString());
+        log.severe(e.toString());
         eventBus.fire(ProgressDialogEvent(false));
         eventBus.fire(LotteryResponseEvent(new LotteryResult()));
       });
