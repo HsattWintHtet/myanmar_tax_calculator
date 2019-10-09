@@ -198,7 +198,7 @@ class HomePageState extends State<HomePage> with RouteAware {
                     children: <Widget>[
 
                       UserAccountsDrawerHeader(
-                        accountName: new Text('${ConstantUtils.APP_NAME} v0.4'),
+                        accountName: new Text('${ConstantUtils.APP_NAME} v1.0'),
                         accountEmail: Text(ConstantUtils.APP_DESCRIPTION,style: TextStyle(fontSize: 10),),
                         currentAccountPicture: new CircleAvatar(
                           backgroundImage: AssetImage('images/app_logo.png'),
