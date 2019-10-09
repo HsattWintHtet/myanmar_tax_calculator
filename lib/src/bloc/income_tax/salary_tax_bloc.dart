@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/bloc/income_tax/bloc.dart';
 import 'package:myanmar_tax_calculator/src/bloc/income_tax/SalaryTaxService.dart';
 import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
@@ -6,6 +7,8 @@ import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 class SalaryTaxBloc extends Bloc<SalaryTaxEvent, SalaryTaxState> {
   @override
   SalaryTaxState get initialState => SalaryTaxState.initial(0, yearList[0], false, incomeTaxRulesDesc);
+
+  final Logger log = new Logger('salary_tax_bloc');
 
   final SalaryTaxService salaryTaxService = SalaryTaxService();
 
@@ -139,13 +142,13 @@ class SalaryTaxBloc extends Bloc<SalaryTaxEvent, SalaryTaxState> {
     }
     yield await salaryTaxService.calculateAll(currentState)
         .then((value)=>value)
-        .catchError((onerror){print(onerror);});
+        .catchError((onerror){log.severe(onerror);});
   }
 
   @override
   void onError(Object error, StackTrace stacktrace) {
-    print(error);
-    print(stacktrace);
+    log.severe(error);
+    log.severe(stacktrace);
   }
 
   @override
@@ -155,9 +158,9 @@ class SalaryTaxBloc extends Bloc<SalaryTaxEvent, SalaryTaxState> {
 
   @override
   void onTransition(Transition<SalaryTaxEvent, SalaryTaxState> transition) {
-    print(transition.currentState);
-    print(transition.event);
-    print(transition.nextState);
+    log.info(transition.currentState);
+    log.info(transition.event);
+    log.info(transition.nextState);
   }
 }
 

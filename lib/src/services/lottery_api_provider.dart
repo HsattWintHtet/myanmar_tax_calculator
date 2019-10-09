@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/model/lottery_result.dart';
 import 'package:myanmar_tax_calculator/src/model/Lottery_result_param.dart';
 import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
@@ -8,18 +9,19 @@ import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
 
 class LotteryResultAPI {
 
+  final Logger log = new Logger('lottery_api_provider');
 
   Future<LotteryResult> postLotteryResult(LotteryResultParam param) async => await http.post("${ConstantUtils.BASE_URL}",
       body: lotteryResultParamToJson(param),
       headers: {"content-type":"application/json"},
   ).then((response) {
-      print('response status: ${response.statusCode}');
-      print('response body: ${json.decode(response.body)}');
+      log.info('response status: ${response.statusCode}');
+      log.info('response body: ${json.decode(response.body)}');
       if (response.statusCode == 200) {
 
         // If the call to the server was successful, parse the JSON
         LotteryResult result = LotteryResult.fromJson(json.decode(response.body));
-        print('after decode response body: $result');
+        log.info('after decode response body: $result');
         return result;
       }
   }).catchError((onError){

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:logging/logging.dart';
 import 'package:myanmar_tax_calculator/src/bloc/individual_biz_tax/bloc.dart';
 import 'package:myanmar_tax_calculator/src/bloc/individual_biz_tax/IndividualBizTaxService.dart';
 import 'package:myanmar_tax_calculator/src/ui/utils/constant_utils.dart';
@@ -10,6 +11,7 @@ class IndividualBizTaxBloc extends Bloc<IndividualBizTaxEvent, IndividualBizTaxS
 
   final IndividualBizService individualBizService = IndividualBizService();
 
+  final Logger log = new Logger('individual_biz_tax_bloc');
 
   final Map<int, List> yearList = {
     0: ['၂၀၁၅-၂၀၁၆', '၁၅၀', '၂၀၁၄', 15000000],
@@ -138,13 +140,13 @@ class IndividualBizTaxBloc extends Bloc<IndividualBizTaxEvent, IndividualBizTaxS
 
     yield await individualBizService.calculateAll(currentState)
         .then((value)=>value)
-        .catchError((onerror){print(onerror);});
+        .catchError((onerror){log.severe(onerror);});
   }
 
   @override
   void onError(Object error, StackTrace stacktrace) {
-    print(error);
-    print(stacktrace);
+    log.severe(error);
+    log.severe(stacktrace);
   }
 
   @override
@@ -154,9 +156,9 @@ class IndividualBizTaxBloc extends Bloc<IndividualBizTaxEvent, IndividualBizTaxS
 
   @override
   void onTransition(Transition<IndividualBizTaxEvent, IndividualBizTaxState> transition) {
-    print(transition.currentState);
-    print(transition.event);
-    print(transition.nextState);
+    log.info(transition.currentState);
+    log.info(transition.event);
+    log.info(transition.nextState);
   }
 }
 
